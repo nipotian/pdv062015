@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 class="testt" >Admin Index</h1>
+
+<table class="aTable">
+<tr>
+<th>Id</th>
+<th>AccountID</th>
+<th>FirstName</th>
+<th>LastName</th>
+<th>BirthDay</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+
+
+<tr class="aTable0" th:each="acc: ${accList}">
+
+<td th:text="${acc.id}">${acc.id}</td>
+<td th:text="${acc.fname}"></td>
+<td th:text="${acc.lname}"></td>
+<td th:text="${acc.birthday}"></td>
+
+</tr>
+
+
+</table>
+</body>
+</html>
