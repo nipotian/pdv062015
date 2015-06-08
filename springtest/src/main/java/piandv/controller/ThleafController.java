@@ -38,7 +38,7 @@ public class ThleafController {
 		model.put("accList", accList);
 		model.put("p",p);
 		model.put("pn", page);
-		return "thymeleaf/index.html";
+		return "thymeleaf/index";
 	}
 	
 	@RequestMapping(value="addAcc", method=RequestMethod.GET)

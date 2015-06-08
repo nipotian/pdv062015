@@ -27,11 +27,29 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 			value="org.springframework.web.servlet.view.JstlView" />
 		<beans:property name="prefix" value="/WEB-INF/pages/" />
 		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="2" />
 	</beans:bean>
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
 		p:maxUploadSize="500000" />
 	
+	<beans:bean id="templateResolver"
+        class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
+    <beans:property name="prefix" value="/WEB-INF/pages/" />
+    <beans:property name="suffix" value=".html" />
+    <beans:property name="templateMode" value="HTML5" />
+  </beans:bean>
+    
+  <beans:bean id="templateEngine"
+        class="org.thymeleaf.spring4.SpringTemplateEngine">
+    <beans:property name="templateResolver" ref="templateResolver" />
+  </beans:bean>
+   
+  <beans:bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+    <beans:property name="templateEngine" ref="templateEngine" />
+    <beans:property name="order" value="1" />
+		<beans:property name="viewNames" value="thymeleaf/*" />
+  </beans:bean>    
 	 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
  
