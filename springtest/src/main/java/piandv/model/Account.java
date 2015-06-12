@@ -2,6 +2,9 @@ package piandv.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -12,9 +15,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 
 
-
+@Entity
+@Table(name="account")
 public class Account{
 	
+	@Id
 	@Min(100000000) @Max(999999999)
 	private int id;
 	

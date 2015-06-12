@@ -17,7 +17,7 @@
   <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            /WEB-INF/sprdemo.xml,
+            /WEB-INF/sprdemo-servlet.xml,
             /WEB-INF/sprdemo-security.xml,
         </param-value>
     </context-param>

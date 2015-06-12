@@ -11,6 +11,7 @@
     	<security:access-denied-handler error-page="/erpage" />
         <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
         <security:intercept-url pattern="/account/**" access="isAuthenticated()"/>
+        <security:intercept-url pattern="/thymeleaf/**" access="isAuthenticated()"/>
         <security:intercept-url pattern="/**" access="permitAll" />
         <security:csrf disabled="true"/> 
         <security:form-login 
